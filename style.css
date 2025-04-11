@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+form {
+    width: 90%;
+    max-width: 500px;
+    margin: 65px auto;
+    padding: 30px 20px;
+    border-radius: 8px;
+    background-color: #3a3a3a;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.form-div h1 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+.form-div img {
+    width: 90%;
+    max-width: 2000px;
+    display: block;
+}
+
+.form-div input {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-div button {
+    background-color: #3bc500;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+.form-div button:hover {
+    background-color: #222;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.form-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form-links a {
+    color: #ffd900;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.div-avaliacoes {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.div-avaliacoes h3 {
+    margin-bottom: 2rem;
+}
+
+.star-rating {
+    direction: rtl;
+    display: inline-flex;
+    gap: 5px;
+    font-size: 24px;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    color: #ccc;
+}
+
+.star-rating input:checked~label,
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: gold;
+}
+
+h1,
+p {
+    margin: 10px 0;
+}
+
+@media (max-width: 480px) {
+    form {
+        padding: 20px 15px;
+    }
+
+    .form-div img {
+        width: 70%;
+    }
+
+    .form-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .star-rating {
+        font-size: 20px;
+    }
+}

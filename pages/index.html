@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Formulário Make</title>
+</head>
+
+<body>
+    <form id="satisfacaoForm" action="https://hook.us2.make.com/2d9uvkxsg8238mtl1uju38dld8apfjpa" method="post">
+        <div class="form-div">
+            <img src="/images/suaEmpresa.png" alt="">
+            <h1>Formulário de Satisfação</h1>
+
+            <p>Nome</p>
+            <input type="text" name="name" required>
+
+            <p>Email</p>
+            <input type="email" name="email" required>
+
+            <p>Telefone</p>
+            <input type="text" name="phone" required>
+            <div class="div-avaliacoes">
+                <h3>Avalie-nos</h3>
+
+                <p>Serviço da empresa</p>
+                <div class="star-rating">
+                    <input type="radio" name="servico" id="servico5" value="5"><label for="servico5">★</label>
+                    <input type="radio" name="servico" id="servico4" value="4"><label for="servico4">★</label>
+                    <input type="radio" name="servico" id="servico3" value="3"><label for="servico3">★</label>
+                    <input type="radio" name="servico" id="servico2" value="2"><label for="servico2">★</label>
+                    <input type="radio" name="servico" id="servico1" value="1"><label for="servico1">★</label>
+                </div>
+
+                <p>Atendimento</p>
+                <div class="star-rating">
+                    <input type="radio" name="atendimento" id="atendimento5" value="5"><label
+                        for="atendimento5">★</label>
+                    <input type="radio" name="atendimento" id="atendimento4" value="4"><label
+                        for="atendimento4">★</label>
+                    <input type="radio" name="atendimento" id="atendimento3" value="3"><label
+                        for="atendimento3">★</label>
+                    <input type="radio" name="atendimento" id="atendimento2" value="2"><label
+                        for="atendimento2">★</label>
+                    <input type="radio" name="atendimento" id="atendimento1" value="1"><label
+                        for="atendimento1">★</label>
+                </div>
+
+                <p>Quanto você indicaria?</p>
+                <div class="star-rating">
+                    <input type="radio" name="indicacao" id="indicacao5" value="5"><label for="indicacao5">★</label>
+                    <input type="radio" name="indicacao" id="indicacao4" value="4"><label for="indicacao4">★</label>
+                    <input type="radio" name="indicacao" id="indicacao3" value="3"><label for="indicacao3">★</label>
+                    <input type="radio" name="indicacao" id="indicacao2" value="2"><label for="indicacao2">★</label>
+                    <input type="radio" name="indicacao" id="indicacao1" value="1"><label for="indicacao1">★</label>
+                </div>
+            </div>
+
+            <br><br>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+
+    <script>
+        const form = document.getElementById('satisfacaoForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+    
+            const formData = new FormData(form);
+    
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.status === 302) {
+                        alert('Formulário enviado com sucesso!');
+                        form.reset();
+                    } else {
+                        alert('Usuário já cadastrado!');
+                        form.reset();
+
+                    }
+                })
+                .catch(error => {
+                    alert('Erro de conexão. Verifique sua internet e tente novamente.');
+                });
+        });
+    </script>
+</body>
+
+</html>
